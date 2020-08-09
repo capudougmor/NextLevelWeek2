@@ -38,9 +38,8 @@ export default class ClassesController {
       .where('classes.subject', '=', subject)
       .join('users', 'classes.user_id', '=', 'user_id')
       .select(['classes.*', 'users.*'])
-
+      
     return res.json(classes)
-    console.log(timeInMinutes)
   }
 
   async create(req: Request, res: Response) {
